@@ -618,7 +618,7 @@ class CreationMMBenchDataset(ImageBaseDataset):
     TYPE = 'CreationVQA'
     DATASET_URL = {
         'LiveMMBench_Creation': '',
-        'Creation_MMBench': 'https://opencompass.openxlab.space/utils/VLMEval/Creation_MMBench.tsv'
+        'Creation_MMBench': 'file:///netscratch/sdhupar/VLMEvalKit/Creation_MMBench_small_1.tsv' #'https://opencompass.openxlab.space/utils/VLMEval/Creation_MMBench.tsv'
     }
     DATASET_MD5 = {
         'Creation_MMBench':'870c0332a9c6a169d0ac9b8574c245fe'
@@ -657,6 +657,7 @@ class CreationMMBenchDataset(ImageBaseDataset):
     def evaluate(self, eval_file, **judge_kwargs):
         rating_rev = None
         dual_eval = judge_kwargs.pop('dual_eval', True)
+        print(f"""SD  in Creation . py 660: judge_kwargs : {judge_kwargs } \n""")
         if dual_eval:
             print('Dual Evaluation Strategy is enabled.')
             src = load(eval_file)

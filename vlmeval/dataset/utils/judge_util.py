@@ -8,6 +8,8 @@ def build_judge(**kwargs):
     from ...api import OpenAIWrapper, SiliconFlowAPI, HFChatModel
     model = kwargs.pop('model', None)
     kwargs.pop('nproc', None)
+    print(f" SD in line 11 in judge util \n kwargs : {kwargs} \n")
+    print("*" * 80)
     load_env()
     LOCAL_LLM = os.environ.get('LOCAL_LLM', None)
     if LOCAL_LLM is None:
